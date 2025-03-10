@@ -1,0 +1,21 @@
+<div class="crud">
+  <h1>CRUD Operations</h1>
+
+  <div>
+    <input [(ngModel)]="newItemName" placeholder="Add new item" />
+    <button (click)="addItem()">Add</button>
+  </div>
+
+  <div>
+    <input [(ngModel)]="itemToUpdateId" placeholder="Item ID to update" type="number" />
+    <input [(ngModel)]="itemToUpdateName" placeholder="Updated item name" />
+    <button (click)="updateItem()">Update</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let item of items">
+      {{ item.name }}
+      <button (click)="deleteItem(item.id)">Delete</button>
+    </li>
+  </ul>
+</div>
